@@ -14,7 +14,6 @@ public class Board {
 		ArrayList<String> boardList = new ArrayList<String>();
 		String url = "http://bbs.sjtu.edu.cn/bbsboa?sec={1}".replace("{1}",
 				districtId);
-
 		try {
 			Document document = Jsoup.connect(url).get();
 			Elements elements = document.select("tr");
@@ -28,7 +27,6 @@ public class Board {
 				} else {
 					boardList.add(name);
 				}
-//				System.out.println(a.outerHtml());
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -40,7 +38,6 @@ public class Board {
 	private static ArrayList<String> getSubBoardList(String folder) {
 		ArrayList<String> boardList = new ArrayList<>();
 		String url = "http://bbs.sjtu.edu.cn/bbssubboard,name,{1}.html".replace("{1}",folder);
-
 		try {
 			Document document = Jsoup.connect(url).get();
 			Elements elements = document.select("tr");
@@ -60,10 +57,6 @@ public class Board {
 		}
 
 		return boardList;
-	}
-
-	public static void main(String[] args) {
-		System.out.println(getDistrictBoardList("0").size());
 	}
 
 }

@@ -137,9 +137,4 @@ public class BoardMaster {
 		}
 		return boardMasterList;
 	}
-
-	public static void main(String[] args) {
-		getAccount("kinki");
-	}
-
 }
