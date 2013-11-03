@@ -13,6 +13,9 @@ public class Analysis {
 
 				ArrayList<String> boardMasterList = BoardMaster
 						.getBoardMasterList(boardName);
+				if (boardMasterList.isEmpty()) {
+					System.out.println(district + "," + boardName);
+				}
 				for (String masterName : boardMasterList) {
 					Account account = BoardMaster.getAccount(masterName);
 					System.out.println(district + "," + boardName + ","
